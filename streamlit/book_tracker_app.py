@@ -18,16 +18,16 @@ def add_book():
         if submitted:
             if not title or not author or not genre:
                 st.error("Title, Author, and Genre cannot be empty!")
-        else:
-            book = {
-                'title': title,
-                'author': author,
-                'genre': genre,
-                'status': status,
-                'rating': rating if rating is not None else '-'
-            }
-            st.session_state.books.append(book)
-            st.success(f"Book '{title.title()}' added!")
+            else:
+                book = {
+                    'title': title,
+                    'author': author,
+                    'genre': genre,
+                    'status': status,
+                    'rating': rating if rating is not None else '-'
+                }
+                st.session_state.books.append(book)
+                st.success(f"Book '{title.title()}' added!")
 
 def update_book():
     st.subheader("Update Book Status and Rating")
