@@ -97,9 +97,6 @@ def summary(books) :
   for key, value in countGenre.items() :
     if maxGenre == value :
       genre.append(key)
-  if len(countGenre) == len(genre) :
-    summary['Most read genre'] = 'None'
-  else :
     summary['Most read genre'] = genre
   printSummary(summary, countGenre)
 
