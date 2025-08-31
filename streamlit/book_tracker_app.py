@@ -13,7 +13,7 @@ def add_book():
         status = st.selectbox("Status", ['Select','read', 'unread'])
         rating = None
         if status == 'read':
-            rating = st.slider("Rating (out of 5)", 0.0, 5.0, 0.0, 0.1)
+            rating = st.slider("Rating (out of 5)", 0.0, 5.0, 0.0, 0.1, disabled=(status != 'read'))
         submitted = st.form_submit_button("Add Book")
         if submitted:
             if not title or not author or not genre or status != ('read' or 'unread') :
