@@ -1,6 +1,6 @@
 # Book Tracker
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.13+-blue)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-green)](https://streamlit.io/)
 
 A Python project to track books. This repository contains **two versions**:
