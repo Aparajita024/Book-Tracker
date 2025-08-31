@@ -13,11 +13,13 @@ def add_book():
         status = st.selectbox("Status", ['Select','read', 'unread'])
         rating = None
         if status == 'read':
-            rating = st.slider("Rating (out of 5)", 0.0, 5.0, 3.0, 0.1)
+            rating = st.slider("Rating (out of 5)", 0.0, 5.0, 0.0, 0.1)
         submitted = st.form_submit_button("Add Book")
         if submitted:
             if not title or not author or not genre or status != ('read' or 'unread') :
-                st.error("Title, Author, and Genre cannot be empty!")
+                st.error("Title, Author, Genre and Status cannot be empty!")
+            if rating == 0.0 :
+                st.error("Rating cannot be zero!")
             else:
                 book = {
                     'title': title,
