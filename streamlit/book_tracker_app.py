@@ -16,6 +16,9 @@ def add_book():
             rating = st.slider("Rating (out of 5)", 0.0, 5.0, 3.0, 0.1)
         submitted = st.form_submit_button("Add Book")
         if submitted:
+            if not title or not author or not genre:
+                st.error("Title, Author, and Genre cannot be empty!")
+        else:
             book = {
                 'title': title,
                 'author': author,
