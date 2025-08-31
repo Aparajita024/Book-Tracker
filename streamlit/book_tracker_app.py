@@ -10,13 +10,13 @@ def add_book():
         title = st.text_input("Title").strip().lower()
         author = st.text_input("Author").strip().lower()
         genre = st.text_input("Genre").strip().lower()
-        status = st.selectbox("Status", ['read', 'unread'])
+        status = st.selectbox("Status", ['Select','read', 'unread'])
         rating = None
         if status == 'read':
             rating = st.slider("Rating (out of 5)", 0.0, 5.0, 3.0, 0.1)
         submitted = st.form_submit_button("Add Book")
         if submitted:
-            if not title or not author or not genre:
+            if not title or not author or not genre or status != ('read' or 'unread') :
                 st.error("Title, Author, and Genre cannot be empty!")
             else:
                 book = {
@@ -61,10 +61,10 @@ def show_all_books():
 
     for i, book in enumerate(st.session_state.books, start=1):
         st.markdown(f"""
-        **{i}. {book['title'].title()}**
-        Author: {book['author'].capitalize()}
-        Genre: {book['genre'].capitalize()}
-        Status: {book['status'].capitalize()}
+        **{i}. {book['title'].title()}** \n
+        Author: {book['author'].capitalize()} \n
+        Genre: {book['genre'].capitalize()} \n
+        Status: {book['status'].capitalize()} \n
         Rating: {book['rating']}
         """)
 
